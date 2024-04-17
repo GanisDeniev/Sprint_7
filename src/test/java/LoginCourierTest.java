@@ -25,8 +25,6 @@ public class LoginCourierTest extends Api{
         File jsonForCreate = new File("src/test/resources/createCourierPeach.json");
         File jsonForLogin = new File("src/test/resources/loginCourierPeach.json");
 
-        Response responseCreate = createCourier(jsonForCreate);
-
         Response responseLogin = loginCourier(jsonForLogin);
 
         responseLogin.then().assertThat().body("id", notNullValue())
@@ -54,8 +52,6 @@ public class LoginCourierTest extends Api{
         File jsonForCreate = new File("src/test/resources/createCourierPeach.json");
         File jsonForIncorrectLogin = new File("src/test/resources/loginCourierPeachWithIncorrectPass.json");
         File jsonForCorrectLogin = new File("src/test/resources/loginCourierPeach.json");
-
-        Response responseCreate = createCourier(jsonForCreate);
 
         Response responseIncorrectLogin = loginCourier(jsonForIncorrectLogin);
 
